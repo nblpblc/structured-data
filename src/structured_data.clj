@@ -38,7 +38,9 @@
     (and (<= a x c) (<= b y d))))
 
 (defn contains-rectangle? [outer inner]
-  :-)
+  (let [[low-left top-right] inner]
+    (and (contains-point? outer low-left)
+         (contains-point? outer top-right))))
 
 (defn title-length [book]
   :-)
